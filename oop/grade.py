@@ -5,12 +5,12 @@
 
 class Grade(object):
 
-    def __init__(self, kor, eng, math):
-        self.kor = kor
+    def __init__(self, kor, eng, math):    # 생성자 메소드
+        self.kor = kor                     # 인스턴스 변수 (this와 같음)
         self.eng = eng
         self.math = math
 
-    def sum(self):
+    def sum(self):                         # 메소드
         return self.kor + self.eng + self.math
 
     def avg(self):
@@ -18,12 +18,12 @@ class Grade(object):
 
 
     @staticmethod
-    def main():
-        kor = int(input('Korean: '))
+    def main():                            # static 메인 메소드
+        kor = int(input('Korean: '))       # input : print문
         eng = int(input('English: '))
         math = int(input('Math: '))
-        grade = Grade(kor, eng, math)
-        avg = grade.avg()
+        grade = Grade(kor, eng, math)      # 메소드 생성; 위에 생성 안한거
+        avg = grade.avg()                  # 레퍼런스 변수; 인스턴스 변수와 로컬변수 이어줌
         if avg >= 90:
             result = 'A'
         elif avg >= 80:
