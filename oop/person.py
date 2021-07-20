@@ -10,24 +10,33 @@ class Person(object):
         self.name = name
         self.age = age
         self.address = address
-        self.persons = []
 
-    def addPersons(self, person):
-        self.persons.append(person)
-
-    def to_String(self, param):
-        print(f'안녕하세요. 제 이름은 {param.name}이고, 나이는 {param.age}세이고, {param.address}에서 거주합니다.')
+    def to_String(self):
+        print(f'[Person Info] \nname: {self.name} \nAge: {self.age} \nAddress: {self.address}\n')
 
 
-    @staticmethod
-    def main():
-        count = int(input('How many ? '))
-        for i in range(count):
+def main():
+    persons = []
+    while 1:
+        print('0-Exit 1-Add 2-Print')
+        menu = input('Choose One Number: ')
+        if menu == '1':
+            persons.append(Person(input('name: '), input('age: '), input('address: ')))
+        elif menu == '2':
+            for i in persons:
+                i.to_String()                 # .to_String : 메소드
+        elif menu == '0':
+            return
+
+if __name__ == '__main__':
+    main()
+
+# @staticmethod
+# Person.main()    -> home controller  같이 바깥에서 돌릴때 사용
+'''for i in range(count):
             person = Person(input('name: '), input('age: '), input('address: '))
         for i in ['\nname: ', 'age: ', 'address: ']:
             person.addPersons(input(f'{i}'))
         for i in ['\nname: ', 'age: ', 'address: ']:
             person.to_String(input(f'{i}'))
-        # print(f'안녕하세요. 제 이름은 {person.name}이고, 나이는 {person.age}세이고, {person.address}에서 거주합니다.')
-
-Person.main()
+'''
