@@ -22,13 +22,13 @@ def set_contact():             # 함수
 def get_contacts(ls):
     for i in ls:
         i.to_String()
-        pass
 
 
 def del_contact(ls, name):
     for i, j in enumerate(ls):          # index가 필요
         if name == j.name:
             del ls[i]
+
 
 def print_menu(ls):
     # return '\t'.join(ls)
