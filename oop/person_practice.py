@@ -3,8 +3,10 @@ class Person(object):
         self.name = name
         self.age = age
         self.address = address
+
     def to_String(self):
         print(f'[Person Info] \nName: {self.name} \nAge: {self.age} \nAddress: {self.address}')
+
 
 def main():
     persons = []
@@ -18,6 +20,7 @@ def main():
         elif menu == '2':
             for i in persons:
                 i.to_String()
+
 
 if __name__ == '__main__':
     main()

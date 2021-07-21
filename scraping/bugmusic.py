@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from urllib.request import urlopen                 # import 할때 소문자 = 함수
+from urllib.request import urlopen
 import urllib.parse
 
 '''
@@ -13,11 +13,11 @@ import urllib.parse
 
 class Bugmusic(object):
 
-    def __init__(self, url):                     # def __init__ : 생성자
-        self.url = url                           # .url : 인스턴스 변수    / =url : (local) 변수
+    def __init__(self, url):
+        self.url = url
 
     def scrap(self):
-        soup = BeautifulSoup(urlopen(self.url), 'lxml')                   # 메소드    / None: null이랑 같음
+        soup = BeautifulSoup(urlopen(self.url), 'lxml')
         # n_artists = 0
         # n_title = 0
         _ = 0
@@ -45,12 +45,8 @@ class MelonMusic(object):
             _ += 1
             print(f"Rank {str(_)} Artist: {i.find('a').text}, Title: {j.find('a').text}")
 
-def main():
-    # 20210720
-    # 16
-    '''     Bugmusic(f'https://music.bugs.co.kr/chart/track/realtime/total?'
-                     f'chartdate={input("Input Date")}&charthour={input("Input Hour")}').scrap()   '''
 
+def main():
     Bugmusic(f'https://music.bugs.co.kr/chart/track/realtime/total?'
              f'chartdate={"20210721"}&charthour={"09"}').scrap()
 
@@ -58,25 +54,5 @@ def main():
 if __name__ == '__main__':
     MelonMusic(f'https://www.melon.com/chart/index.htm?dayTime=2021072016').scrap()
 
-
-
-
-'''
-        for i, j in enumerate(artists):                                 # name='p' : 'p'=태그
-            _ += 1
-            print(f"Rank {str(_)}Artist: {j.find('a').text}, Title: {titles[i].find('a').text}")
-         n_artists += 1
-            print(str(n_artists) + " Rank")
-            # print(str(n_title)+"Name")
-            print("Artist : "+ i.find('a').text+' - '+ls2[n_title].find('a').text)
-            n_title += 1
-        # print("*"*100)
-        ls = soup.find_all(name='p', attrs={'class':'title'})
-        print(f'List size is {len(ls)}')
-        for i in ls:
-            n_title += 1
-            print(str(n_title)+"Rank")
-            print("Title : "+ i.find('a'.text))'''
-        # print(f'{self.url}')
 
 
