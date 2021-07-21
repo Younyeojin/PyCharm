@@ -67,10 +67,12 @@ def main():
         if menu == 0:
             break
         elif menu == 1:
+            mr.fname = 'bugs'
             mr.domain = 'https://music.bugs.co.kr/chart/track/realtime/total?'
             mr.query_string = 'chartdate=20210721&charthour=09'
             mr.set_html()
         elif menu == 2:
+            mr.fname = 'melon'
             mr.domain = 'https://www.melon.com/chart/index.htm?'
             mr.query_string = 'dayTime=2021072016'
             mr.set_html()
