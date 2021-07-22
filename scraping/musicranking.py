@@ -62,7 +62,7 @@ def print_menu(ls):
 def main():
     mr = MusicRanking()
     while 1:
-        menu = print_menu(['exit', 'Bugs URL', 'Melon URL', 'Output', 'Print Dict',
+        menu = print_menu(['exit', 'Bugs URL', 'Melon URL', 'Bugs Output', 'Melon Output', 'Print Dict',
                            'Dict to Dataframe', 'Dataframe to CSV'])
         if menu == 0:
             break
@@ -82,13 +82,16 @@ def main():
             mr.class_name.append('title')
             mr.get_ranking()
         elif menu == 4:
-            mr.insert_dict()
+            mr.tag_name = 'div'
+            mr.class_name.append('ellipsis rank02')
+            mr.class_name.append('ellipsis rank01')
+            mr.get_ranking()
         elif menu == 5:
-            mr.dict_to_dataframe()
+            mr.insert_dict()
         elif menu == 6:
+            mr.dict_to_dataframe()
+        elif menu == 7:
             mr.df_to_csv()
-
-
 
 
 if __name__ == '__main__':
