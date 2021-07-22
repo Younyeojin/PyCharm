@@ -15,8 +15,8 @@ class Contacts(object):
         print(f'[Contacts] \nName: {self.name} \nPhone: {self.phone} \nEmail: {self.email} \nAddress: {self.address}')
 
 
-def set_contact():             # 함수
-    return Contacts(input('name'), input('phone'), input('email'), input('address'))    # 인스턴스
+def set_contact() -> object:             # 함수
+    return Contacts(input('name'), input('phone'), input('email'), input('address'))    # 생성자에 의해 리턴된 인스턴스 는 객체
 
 
 def get_contacts(ls):
@@ -24,16 +24,16 @@ def get_contacts(ls):
         i.to_String()
 
 
-def del_contact(ls, name):
+def del_contact(ls, name):              # return type 없으니 void
     for i, j in enumerate(ls):          # index가 필요
         if name == j.name:
             del ls[i]
 
 
-def print_menu(ls):
+def print_menu(ls) -> int:              # -> int ; return type 명시
     # return '\t'.join(ls)
     t = ''
-    for i, j in enumerate(ls):             # enumerate:열거하다 / 리스트가 있는 경우 순서와 리스트의 값을 전달하는 기능
+    for i, j in enumerate(ls):          # enumerate:열거하다 / 리스트가 있는 경우 순서와 리스트의 값을 전달하는 기능
         t += str(i)+'-'+j+'\t'
     return int(input(t))
 
