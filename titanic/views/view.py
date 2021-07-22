@@ -10,7 +10,6 @@ class View(object):
         # service = self.service
         this = self.preprocessing(train, test)
         print(f'The Type of This is  {type(this.test)}')
-        print(f'The head of Train is \n {this.train.head(2)}')
         print(f'The head of Test is \n {this.test.head(2)}')
 
     def preprocessing(self, train, test) -> object:
