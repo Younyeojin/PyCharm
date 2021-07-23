@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 import pandas as pd                                 # as pd : as(별칭) + 줄임말
 import requests                                     # request : urllib안에 들어있는 something
 
+from common.menu import print_menu
+
 
 class MusicRanking(object):
     domain = ''                                     # ' ' : String 타입
@@ -50,13 +52,6 @@ class MusicRanking(object):
     def df_to_csv(self):
         path = f'./data/{self.fname}.csv'            # csv:파일명
         self.df.to_csv(path, sep=',', na_rep='NaN')  # sep:        NaN : Null
-
-
-def print_menu(ls):
-    t = ''
-    for i, j in enumerate(ls):
-        t += str(i) + ' - ' + j + '\t'
-    return int(input(t))
 
 
 def main():
