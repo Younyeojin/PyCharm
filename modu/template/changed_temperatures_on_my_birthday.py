@@ -22,7 +22,6 @@ class ChangedTemperaturesOnMyBirthday():
     data: [] = list()
     highest_temperatures: [] = list()
 
-
     def processing(self):
         self.read_data()
         self.save_highest_temperatures()
@@ -34,6 +33,7 @@ class ChangedTemperaturesOnMyBirthday():
         next(data)
         # print([i[-1] for i in data])
         self.data = data
+        return data
 
     def show_highest_temperature(self):
         # print([i[-1] for i in self.data])
@@ -48,25 +48,34 @@ class ChangedTemperaturesOnMyBirthday():
         print(result)
         print(len(result))'''
 
-    def visualize_data(self):
-        result = []
-        plt.plot(result, 'r')
+    def visualize_highest_temperatures(self):
+        plt.plot(self.highest_temperatures, 'r')
+        plt.figure(figsize=(20,2))
         plt.show()
+
+    def highest_temperatures_my_birthday(self):
+        high = []  # 최고기온
+        low = []   # 최저기온
+        for i in self.data:
+            if i[-1] != '' and i[-2] !='':
+                if 1983 <= int(i[0].split('-')[0]):
+                    if i[0].split('-')[1] == '02' and i[0].split('-')[2] == '14':
+                        high.append(float(i[-1]))
+                        low.append(float(i[-2]))
+
+        plt.plot(high, 'hotpink')
+        plt.plot(low, 'skyblue')
+        plt.show()
+
 
     def extract_date_data(self):
-        data = self.data
-        result = []
-        for i in self.data:
-            if i[-1] != '':
-                if i[0].split('-')[1] == '08':
-                    result.append(float(i[-1]))
-        plt.plot(result, 'hotpink')
-        plt.show()
-
+        pass
 
 
 if __name__ == '__main__':
     this = ChangedTemperaturesOnMyBirthday()
     this.read_data()
     # this.show_highest_temperature()
-    this.save_highest_temperatures()
+    # this.save_highest_temperatures()
+    # this.visualize_highest_temperatures()
+    this.highest_temperatures_my_birthday()
