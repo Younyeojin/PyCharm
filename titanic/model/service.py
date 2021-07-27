@@ -7,7 +7,7 @@ class Service(object):
 
     def new_model(self, payload: str) -> object:                   # payload : 사용에 있어 전송되는 데이터(전송의 근본적인 목적)
         this = self.dataset
-        this.context = '../data/'
+        this.context = './data/'
         this.fname = payload
         return pd.read_csv(this.context + this.fname)
 
