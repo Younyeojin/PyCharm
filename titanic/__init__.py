@@ -8,5 +8,5 @@ if __name__ == '__main__':
         elif menu == '1':
             plot = Plot()
             # plot.show_plot_survived_dead()
-            #plot.show_plot_pclass()
+            # plot.show_plot_pclass()
             plot.show_plot_embarked()
