@@ -18,7 +18,7 @@ data : [] = list()
 '''
 
 
-class ChangedTemperaturesOnMyBirthday():
+class ChangedTemperaturesOnMyBirthday(object):
     data: [] = list()
     highest_temperatures: [] = list()
 
