@@ -27,4 +27,4 @@ class Population(object):
 if __name__ == '__main__':
     pop = Population()
     pop.read_data()
-    pop.show_plot(pop.pop_per_dong('동탄7동'))
+    pop.show_plot(pop.pop_per_dong('역삼2동'))
