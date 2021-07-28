@@ -68,6 +68,7 @@ def np_linspace():
         1.26491106 1.30384048 1.34164079 1.37840488 1.41421356]
     '''
 
+
 def np_mask():
     a = np.arange(-5, 5)
     print(f'mask[-5 -4 -3 -2 -1] : {a[a<0]}')
@@ -76,6 +77,19 @@ def np_mask():
     mask2 = abs(a) % 2 == 0
     print(f'mask1+mask2 [-5 -4 -2  0  2  4] : {a[mask1+mask2]}') # java 에서 ㅣㅣ 연산
     print(f'mask1*mask2 [-4  4] : {a[mask1*mask2]}')             # java 에서 && 연산
+
+
+def np_bubble():
+    x = np.random.randint(-100, 100, 1000)
+    y = np.random.randint(-100, 100, 1000)
+    size = np.random.randint(100) * 100
+    mask1 = abs(x) > 50
+    mask2 = abs(y) > 50
+    x = x[mask1+mask2]
+    y = y[mask1 + mask2]
+    plt.scatter(x, y, s=size, c=x, cmap='jet', alpha=0.7)
+    plt.colorbar()
+    plt.show()
 
 
 if __name__ == '__main__':
@@ -89,4 +103,5 @@ if __name__ == '__main__':
     # np_eye()
     # np_arange()
     # np_linspace()
-    np_mask()
+    # np_mask()
+    np_bubble()
