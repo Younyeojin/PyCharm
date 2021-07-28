@@ -75,7 +75,7 @@ def np_mask():
     print(f'mask[-5 -4 4] : {a[mask1]}')
     mask2 = abs(a) % 2 == 0
     print(f'mask1+mask2 [-5 -4 -2  0  2  4] : {a[mask1+mask2]}') # java 에서 ㅣㅣ 연산
-    print(f'mask1*mask2 [-4  4] : {a[mask1*mask2]}')             # java 에서 %% 연산
+    print(f'mask1*mask2 [-4  4] : {a[mask1*mask2]}')             # java 에서 && 연산
 
 
 if __name__ == '__main__':
